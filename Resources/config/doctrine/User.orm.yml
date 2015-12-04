@@ -1,0 +1,22 @@
+Ais\UserBundle\Entity\User:
+ type: entity
+ table: user
+ id:
+  id: 
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  username:
+   type: string
+  password:
+   type: text
+  salt:
+   type: string
+  nama:
+   type: string
+  is_active:
+   type: boolean
+   nullable: true
+  is_delete:
+   type: boolean
+   nullable: true
