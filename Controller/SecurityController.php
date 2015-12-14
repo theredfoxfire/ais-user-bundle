@@ -34,16 +34,6 @@ class SecurityController extends Controller
 				'error'         => $error,
 			)
 		);
-		//~ 
-		//~ $user = new User();
-		//~ $regForm = $this->createForm(new RegisterType(), $user, array(
-			//~ 'method' => 'POST',
-		//~ ));
-		//~ $this->get('session')->getFlashBag()->add('notice', 'Login gagal, periksa kembali username & password Anda.');
-//~ 
-		//~ return $this->render('front/user/register.html.twig', array(
-			//~ 'form' => $regForm->createView(),
-		//~ ));
     }
 
     public function loginCheckAction()

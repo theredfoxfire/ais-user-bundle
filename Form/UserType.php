@@ -19,6 +19,7 @@ class UserType extends AbstractType
             ->add('password')
             ->add('salt')
             ->add('nama')
+            ->add('roles')
             ->add('is_active')
             ->add('is_delete')
         ;

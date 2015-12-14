@@ -1,0 +1,9 @@
+user_login:
+ path:     /login
+ defaults: { _controller: "AisUserBundle:Security:login" }
+user_login_check:
+ path:     /login_check
+ defaults: { _controller: "AisUserBundle:Security:loginCheck" }
+user_logout:
+ path:     /logout
+ defaults: { _controller: "AisUserBundle:Security:logout" }

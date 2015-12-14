@@ -12,6 +12,9 @@ Ais\UserBundle\Entity\User:
    type: text
   salt:
    type: string
+  roles:
+   type: json_array
+   nullable: true
   nama:
    type: string
   is_active:

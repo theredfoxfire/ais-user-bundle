@@ -3,3 +3,7 @@ ais_user_user:
     prefix: /v1
     resource: Ais\UserBundle\Controller\UserController
     name_prefix:  api_1_ # naming collision
+
+ais_user_login:
+ resource: "@AisUserBundle/Resources/config/routing/user.yml"
+ prefix: /auth

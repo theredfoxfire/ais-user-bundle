@@ -106,4 +106,20 @@ Interface UserInterface
      * @return boolean
      */
     public function getIsDelete();
+    
+    /**
+     * Get roles
+     *
+     * @return array 
+     */
+    public function getRoles();
+    
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles);
 }
