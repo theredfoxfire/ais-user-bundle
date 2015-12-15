@@ -231,6 +231,9 @@ class User implements UserInterface, AdvancedUserInterface, \Serializable
     {
         return serialize(array(
 			$this->id,
+			$this->accessToken,
+			$this->refreshToken,
+			$this->authCode,
 			$this->username,
 			$this->password,
 			$this->salt,
@@ -244,6 +247,9 @@ class User implements UserInterface, AdvancedUserInterface, \Serializable
     {
         list (
 			$this->id,
+			$this->accessToken,
+			$this->refreshToken,
+			$this->authCode,
 			$this->username,
 			$this->password,
 			$this->salt,
