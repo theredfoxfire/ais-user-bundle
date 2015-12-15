@@ -8,6 +8,7 @@
     <parameters>
         <parameter key="ais_user.user.handler.class">Ais\UserBundle\Handler\UserHandler</parameter>
         <parameter key="ais_user.user.class">Ais\UserBundle\Entity\User</parameter>
+        <parameter key="ais_user.provider.class">Ais\UserBundle\Provider\UserProvider</parameter>
     </parameters>
 
     <services>
@@ -16,6 +17,8 @@
             <argument>%ais_user.user.class%</argument>
             <argument type="service" id="form.factory"></argument>
         </service>
-    </services>
-
+        <service id="ais_user.user.manager" class="Doctrine\ORM\EntityManager" factory-service="doctrine" factory-method="getManagerForClass">
+			<argument>%ais_user.user.class%</argument>
+		</service>
+	</services>
 </container>
