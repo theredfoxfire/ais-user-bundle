@@ -1,6 +1,7 @@
 Ais\UserBundle\Entity\User:
  type: entity
  table: user
+ repositoryClass: Ais\UserBundle\Repository\UserRepository
  id:
   id: 
    type: integer
@@ -23,3 +24,13 @@ Ais\UserBundle\Entity\User:
   is_delete:
    type: boolean
    nullable: true
+ oneToMany:
+  accessToken:
+   targetEntity: AccessToken
+   mappedBy: user
+  refreshToken:
+   targetEntity: RefreshToken
+   mappedBy: user
+  authCode:
+   targetEntity: AuthCode
+   mappedBy: user

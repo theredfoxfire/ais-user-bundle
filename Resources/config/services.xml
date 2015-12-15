@@ -20,5 +20,14 @@
         <service id="ais_user.user.manager" class="Doctrine\ORM\EntityManager" factory-service="doctrine" factory-method="getManagerForClass">
 			<argument>%ais_user.user.class%</argument>
 		</service>
+		<service id="ais_user.user.repository" 
+			class="Ais\UserBundle\Repository\UserRepository"
+			factory-service="ais_user.user.manager" factory-method="getRepository">
+				<argument>%ais_user.user.class%</argument>
+		</service>
+		<service id="ais_user.user.provider"
+			class="%ais_user.provider.class%">
+				<argument type="service" id="ais_user.user.repository" />
+		</service>
 	</services>
 </container>

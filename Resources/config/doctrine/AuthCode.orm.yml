@@ -1,0 +1,21 @@
+Ais\UserBundle\Entity\AuthCode:
+ type: entity
+ table: auth_code
+ id:
+  id:
+   type: integer
+   generator: { strategy: AUTO }
+
+ manyToOne:
+  client:
+   targetEntity: Client
+   inversedBy: authCode
+   joinColumn:
+    name: client
+    referencedColumnName: id
+  user:
+   targetEntity: User
+   inversedBy: authCode
+   joinColumn:
+    name: user
+    referencedColumnName: id

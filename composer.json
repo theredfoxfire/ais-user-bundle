@@ -23,13 +23,14 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-	"ircmaxell/password-compat"            : "~1.0",
+		"ircmaxell/password-compat"            : "~1.0",
         "leafo/scssphp"                        : "~0.1.5",
         "patchwork/jsqueeze"                   : "~1.0",
         "friendsofsymfony/rest-bundle": "@dev",
         "jms/serializer-bundle": "@dev",
         "willdurand/rest-extra-bundle": "@dev",
-        "nelmio/api-doc-bundle": "@dev"
+        "nelmio/api-doc-bundle": "@dev",
+        "friendsofsymfony/oauth-server-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
