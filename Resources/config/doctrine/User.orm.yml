@@ -24,6 +24,9 @@ Ais\UserBundle\Entity\User:
   is_delete:
    type: boolean
    nullable: true
+  api_key:
+   type: string
+   length: 32
  oneToMany:
   accessToken:
    targetEntity: AccessToken

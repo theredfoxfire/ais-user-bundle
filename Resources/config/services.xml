@@ -29,5 +29,9 @@
 			class="%ais_user.provider.class%">
 				<argument type="service" id="ais_user.user.repository" />
 		</service>
+		<service id="ais_user.grant_type.api_key" class="Ais\UserBundle\OAuth\ApiKeyGrantExtension">
+			<tag name="fos_oauth_server.grant_extension" uri="http://localhost/AIS/user-bundle/web/app_dev.php/grants/api_key" />
+			<argument type="service" id="ais_user.user.repository" />
+		</service>
 	</services>
 </container>
