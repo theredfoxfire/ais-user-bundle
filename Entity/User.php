@@ -418,30 +418,30 @@ class User implements UserInterface, AdvancedUserInterface, \Serializable
     /**
      * @var string
      */
-    private $api_key;
+    private $apikey;
 
 
     /**
-     * Set apiKey
+     * Set apikey
      *
-     * @param string $apiKey
+     * @param string $apikey
      *
      * @return User
      */
-    public function setApiKey($apiKey)
+    public function setApikey($apikey)
     {
-        $this->api_key = $apiKey;
+        $this->apikey = $apikey;
 
         return $this;
     }
 
     /**
-     * Get apiKey
+     * Get apikey
      *
      * @return string
      */
-    public function getApiKey()
+    public function getApikey()
     {
-        return $this->api_key;
+        return $this->apikey;
     }
 }
