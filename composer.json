@@ -1,5 +1,5 @@
 {
-    "name" : "Ais/UserBundle",
+    "name" : "ais/userbundle",
     "description" : "A bundle filled with User",
     "type" : "symfony-bundle",
     "authors" : [{
