@@ -21,7 +21,11 @@ class UserProvider implements UserProviderInterface
 	public function loadUserByUsername($username)
 	{
 		$q = $this->userRepository
+<<<<<<< HEAD
 			->createQueryBuilder('u')
+=======
+			->createQueryBuilder('')
+>>>>>>> 37683e79156a786eebb3759d7aa1ba127733abe2
 			->where('u.username = :username')
 			->setParameter('username', $username)
 			->getQuery();
