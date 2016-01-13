@@ -1,0 +1,38 @@
+Ais\UserBundle\Entity\User:
+ type: entity
+ table: user
+ repositoryClass: Ais\UserBundle\Repository\UserRepository
+ id:
+  id: 
+   type: integer
+   generator: { strategy: AUTO }
+ fields:
+  username:
+   type: string
+  password:
+   type: text
+  salt:
+   type: string
+  roles:
+   type: json_array
+   nullable: true
+  nama:
+   type: string
+  is_active:
+   type: boolean
+   nullable: true
+  is_delete:
+   type: boolean
+   nullable: true
+  apikey:
+   type: string
+ oneToMany:
+  accessToken:
+   targetEntity: AccessToken
+   mappedBy: user
+  refreshToken:
+   targetEntity: RefreshToken
+   mappedBy: user
+  authCode:
+   targetEntity: AuthCode
+   mappedBy: user

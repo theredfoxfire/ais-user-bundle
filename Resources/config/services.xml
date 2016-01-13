@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="ais_user.user.handler.class">Ais\UserBundle\Handler\UserHandler</parameter>
+        <parameter key="ais_user.user.class">Ais\UserBundle\Entity\User</parameter>
+        <parameter key="ais_user.provider.class">Ais\UserBundle\Provider\UserProvider</parameter>
+    </parameters>
+
+    <services>
+        <service id="ais_user.user.handler" class="%ais_user.user.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%ais_user.user.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="ais_user.user.manager" class="Doctrine\ORM\EntityManager" factory-service="doctrine" factory-method="getManagerForClass">
+			<argument>%ais_user.user.class%</argument>
+		</service>
+		<service id="ais_user.user.repository" 
+			class="Ais\UserBundle\Repository\UserRepository"
+			factory-service="ais_user.user.manager" factory-method="getRepository">
+				<argument>%ais_user.user.class%</argument>
+		</service>
+		<service id="ais_user.user.provider"
+			class="%ais_user.provider.class%">
+				<argument type="service" id="ais_user.user.repository" />
+		</service>
+		<service id="ais_user.grant_type.api_key" class="Ais\UserBundle\OAuth\ApiKeyGrantExtension">
+			<tag name="fos_oauth_server.grant_extension" uri="http://localhost/AIS/user-bundle/web/app_dev.php/grants/api_key" />
+			<argument type="service" id="ais_user.user.repository" />
+		</service>
+	</services>
+</container>

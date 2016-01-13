@@ -1,0 +1,18 @@
+{% block content %}
+    <h1 class="title">{{ 'user.list'|trans({}, 'AisUserBundle') }}</h1>
+
+    <ul id="user-list">
+        {% for user in users %}
+            <li>
+                <a href="{{ path('api_1_get_user', {'id': user.id}) }}">{{ user.nama }}</a>
+                {#[<a href="{{ path('api_1_edit_users', {'id': user.id}) }}">{{ 'user.edit.link'|trans({}, 'AisUserBundle') }}</a>]#}
+                {#[<a href="{{ path('api_1_remove_users', {'id': user.id}) }}">{{ 'user.remove.link'|trans({}, 'AisUserBundle') }}</a>]#}
+            </li>
+        {% else %}
+            <li>{{ 'user.list.empty'|trans({}, 'AisUserBundle') }}</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{{ path('api_1_new_user') }}">{{ 'user.new.link'|trans({}, 'AisUserBundle') }}</a>
+    </p>
+{% endblock %}
