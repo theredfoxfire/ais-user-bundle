@@ -77,6 +77,6 @@ ex: http://localhost/web/app_dev.php/api/doc
 ```
 
 ### Want to join for developing this API?
-I already created one repo dev this API, visit [Dev AIS API](https://github.com/theredfoxfire/dev-ais-api) follow the readme. Good luck!
+I already created one repo dev for this API, visit [Dev AIS API](https://github.com/theredfoxfire/dev-ais-api) follow the readme. Good luck!
 
 Find a typo? just ask me for PR. If you find some error please help me to fix it by email me to vizzlearn@gmail.com
