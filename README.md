@@ -1,10 +1,10 @@
-# ais-user-bundle
+## ais-user-bundle
 user Bundle For AIS. I use Symfony 2.7.4 in my kit. In case if you want to install Symfony follow the URL below:
 
 [Symfony 2.7](http://symfony.com/doc/2.7/book/installation.html)
 
 
-## Usage
+### Usage
 
 I assume you already have composer on your dev environment. If not, please visit this URL:
 
@@ -69,10 +69,45 @@ Import the route to your app/config/routing.yml
     prefix:   /api/doc
 ```
 
-## See what in the inside
+### See what in the inside
 Now you may see the available API by access your url dev
 
 ```
 ex: http://localhost/web/app_dev.php/api/doc
 ```
+
+### Want to join for developing this API?
+user Bundle For AIS. I use Symfony 2.7.4 in my kit. In case if you want to install Symfony follow the URL below:
+
+[Symfony 2.7](http://symfony.com/doc/2.7/book/installation.html)
+
+Once we finished on installing Symfony 2.7.4 go to our `src/` then run `mkdir Ais/UserBundle`. Move to `Ais/UserBundle` then run `php composer.phar update` to update the dependencies.
+
+Registering our UserBundle.
+
+```php
+<?php
+// app/AppKernel.php
+
+use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\Config\Loader\LoaderInterface;
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+        ...
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Ais\UserBundle\AisUserBundle(),
+        );
+        ...
+
+        return $bundles;
+    }
+}
+```
+
 Find a typo? just ask me for PR. If you find some error please help me to fix it by email me to vizzlearn@gmail.com
